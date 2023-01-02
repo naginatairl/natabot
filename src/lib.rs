@@ -11,14 +11,19 @@ struct Bot;
 #[async_trait]
 impl EventHandler for Bot {
     async fn message(&self, ctx: Context, msg: Message) {
-        if msg.content == "!hello" {
+        /* if msg.content == "!hello" {
             if let Err(e) = msg.channel_id.say(&ctx.http, "world!").await {
+                error!("Error sending message: {:?}", e);
+            }
+        } */ //command skeleton
+
+        if msg.content == "!aboutme" {
+            if let Err(e) = msg.channel_id.say(&ctx.http, "im a bot written in rust but my creator doesn't know rust :joy:").await {
                 error!("Error sending message: {:?}", e);
             }
         }
     }
 
-    // commands are made like that??? cool i guess
 
     async fn ready(&self, _: Context, ready: Ready) {
         info!("{} is connected!", ready.user.name);
