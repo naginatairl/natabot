@@ -17,8 +17,14 @@ impl EventHandler for Bot {
             }
         } */ //command skeleton
 
-        if msg.content == "!aboutme" {
-            if let Err(e) = msg.channel_id.say(&ctx.http, "im a bot written in rust but my creator doesn't know rust :joy:").await {
+        if msg.content == "natabot" {
+            if let Err(e) = msg.channel_id.say(&ctx.http, "is kil").await {
+                error!("Error sending message: {:?}", e);
+            }
+        }
+
+        if msg.content == "!help" {
+            if let Err(e) = msg.channel_id.say(&ctx.http, "nata does not know sharding so lol").await {
                 error!("Error sending message: {:?}", e);
             }
         }
