@@ -24,7 +24,7 @@ impl EventHandler for Bot {
         }
 
         if msg.content == "!help" {
-            if let Err(e) = msg.channel_id.say(&ctx.http, "nata does not know sharding so lol").await {
+            if let Err(e) = msg.channel_id.say(&ctx.http, "https://tenor.com/view/cat-middle-finger-cat-gif-23258211").await {
                 error!("Error sending message: {:?}", e);
             }
         }
